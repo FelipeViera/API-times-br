@@ -6,19 +6,20 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 @app.route('/')
 def homepage():
-    return "Teste de API RESTful"
+    return "Esta é API REST da Série A do Brasileirão."
 
-@app.route('/d123')
-def d123():
+@app.route('/times')
+def times():
 
     # Ler o arquivo Excel`
     tabela = pd.read_excel('Times-br.xlsx')
+    # Conta a quantidade de elementos
     caracteres = len(tabela['Times'])
     resposta = {}
-    caracteres = len(tabela['Times'])
-    for c in range(0, caracteres):
-        resposta.setdefault('Times', []).append(tabela['Times'][c])
-
+    for c in range(0, 20):
+        resposta.setdefault(tabela['Times'][c], []).append("Estaduais: " + str(tabela['estaduais'][c]))
+        resposta.setdefault(tabela['Times'][c], []).append("Nacionais: " + str(tabela['nacionais'][c]))
+        resposta.setdefault(tabela['Times'][c], []).append("Continentais: " + str(tabela['continentais'][c]))
+        resposta.setdefault(tabela['Times'][c], []).append("Total: " + str(tabela['Total'][c]))
     return jsonify(resposta)
-
 app.run(host='0.0.0.0')

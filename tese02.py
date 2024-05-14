@@ -4,5 +4,8 @@ tabela = pd.read_excel('Times-br.xlsx')
 resposta = {}
 caracteres = len(tabela['Times'])
 for c in range(0, caracteres):
-    resposta.setdefault('Times', []).append(tabela['Times'][c])
-print(resposta['Times'])
+    resposta.setdefault(tabela['Times'][c], []).append("Estaduais: " + str(tabela['estaduais'][c]))
+    resposta.setdefault(tabela['Times'][c], []).append("Nacionais: " + str(tabela['nacionais'][c]))
+    resposta.setdefault(tabela['Times'][c], []).append("Continentais: " + str(tabela['continentais'][c]))
+    resposta.setdefault(tabela['Times'][c], []).append("Total: " + str(tabela['Total'][c]))
+print(resposta)
