@@ -22,4 +22,5 @@ def times():
         resposta.setdefault(tabela['Times'][c], []).append("Continentais: " + str(tabela['continentais'][c]))
         resposta.setdefault(tabela['Times'][c], []).append("Total: " + str(tabela['Total'][c]))
     return jsonify(resposta)
+
 app.run(host='0.0.0.0')
