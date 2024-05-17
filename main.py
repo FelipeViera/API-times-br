@@ -62,5 +62,19 @@ def continentais():
         lista.append(tabela['continentais'][c])
     return jsonify(resposta)
 
+@app.route('/times/total')
+def total():
+    # Ler o arquivo Excel`
+    tabela = pd.read_excel('Times-br.xlsx')
+    # Conta a quantidade de elementos
+    caracteres = len(tabela['Times'])
+    lista = []
+    resposta = {}
+    for c in range(0, 20):
+        resposta.setdefault(tabela['Times'][c], []).append(str(tabela['Total'][c]))
+        lista.append(tabela['Total'][c])
+    return jsonify(resposta)
+
+
 
 app.run(host='0.0.0.0')
