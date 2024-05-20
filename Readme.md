@@ -25,7 +25,29 @@ Após isto ele vai liberar um link http. Copie o link, adicione
 
 <h2> Endpoints</h2>
 <ul>
-<li> http://seu-host/times</li>
+<li> 
+http://seu-host/times (Retorna o número de títulos estaduais, nacionais e
+continentais da atual Série A do campeonato brasileiro)
+</li>
+
+<li>
+http://seu-host/times/estaduais (Retorna apenas o número de títulos estaduais)
+</li>
+
+<li>
+http://seu-host/times/nacionais (Retorna apenas o número de títulos nacionais, como a
+Copa do Brasil, o Brasileiro e a Supercopa do Brasil)
+</li>
+
+<li>
+http://seu-host/times/continentais (Retorna apenas o número de títulos continentais, como a 
+Libertadores, a Sul-Americana e a Recopa)
+</li>
+
+<Li>
+http://seu-host/times/total (Retorna os valores de todos os endpoints anteriores)
+</li>
+
 </ul>
 
 
@@ -35,6 +57,7 @@ Após isto ele vai liberar um link http. Copie o link, adicione
 <ul>
 <li>Python</li>
 <li>Criação e integração de API RESTful</li>
+<li>Manipulação de dados de planilha Excel</li>
 </ul>
 
 
